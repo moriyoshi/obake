@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta http-equiv="Refresh" content="30; URL=" />
+  <title>TITLE</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+  <script type="text/javascript"> 
+document.addEventListener('DOMContentLoaded', function () {
+  alert("domContentLoaded");
+}, false);
+window.addEventListener('load', function() {
+  document.getElementById('test').appendChild(document.createTextNode('test'));
+  alert("hey");
+  confirm("hey");
+  prompt("hey", "");
+  var evt = document.createEvent('MouseEvents');
+  evt.initEvent('mousedown', true, false);
+  console.log(evt);
+  document.getElementById('foo').dispatchEvent(evt);
+}, false);
+</script>
+</head>
+<body>
+  test
+  <div id="test"></div>
+  <object type="application/x-shockwave-flash" data="StrobeMediaPlayback.swf" width="320" height="180">
+    <param name="movie" value="StrobeMediaPlayback.swf" />
+    <param name="flashvars" value="src=http://players.edgesuite.net/videos/big_buck_bunny/bbb_448x252.mp4" />
+    <embed src="StrobeMediaPlayback.swf" width="320" height="180">
+    </embed>
+  </object>
+  <img src="http://www.iana.org/_img/iana-logo-pageheader.png" />
+  <form method="post" enctype="multipart/form-data">
+    <input type="file" name="foo" id="foo" />
+  </form>
+</body>
+</html>
